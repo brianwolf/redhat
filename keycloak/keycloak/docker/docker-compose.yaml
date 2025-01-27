@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.1.0
+    restart: on-failure:3
+    environment:
+      - KC_BOOTSTRAP_ADMIN_USERNAME=admin
+      - KC_BOOTSTRAP_ADMIN_PASSWORD=admin
+      - ENV KC_DB=postgres
+      - ENV KC_DB_URL=jdbc:postgresql://postgres:5432/keycloak
+      - ENV KC_DB_USERNAME=keycloak
+      - ENV KC_DB_PASSWORD=keycloak
+    ports:
+      - 9090:8080
+    networks:
+      - docker-net
+    depends_on:
+      - postgres
+    command: start-dev
+
+  postgres:
+    image: postgres:12.22
+    restart: on-failure:3
+    environment:
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
+      POSTGRES_DB: keycloak
+    volumes:
+      - postgres:/var/lib/postgresql/data:rw
+    networks:
+      - docker-net
+    ports:
+      - 5432:5432
+
+networks:
+  docker-net:
+    name: docker-net
+    external: false
+
+volumes:
+  postgres:
+    name: postgres
+    external: false
