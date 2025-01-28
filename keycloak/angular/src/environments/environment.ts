@@ -5,5 +5,5 @@ export const environment = {
         postLogoutRedirectUri: 'http://localhost:4200/logout',
         realm: 'caja-ande',
         clientId: 'front',
-    }, 
+    },
 };

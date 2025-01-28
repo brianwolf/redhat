@@ -7,5 +7,5 @@ dev:
 c compile:
 	./mvnw install -Dnative -DskipTests -Dquarkus.native.container-build=true
 
-l linux: 
+l linux:
 	./target/$(APP_NAME)-$(VERSION)-runner
