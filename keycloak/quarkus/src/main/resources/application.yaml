@@ -1,3 +1,18 @@
 quarkus:
   http:
     port: 8080
+
+quarkus:
+  keycloak:
+    policy-enforcer:
+      paths:
+        public:
+          paths: /q
+          enforcement-mode: DISABLED
+  oidc:
+    auth-server-url: ${KEYCLOAK_URL:http://localhost:9090/realms/caja-ande}
+    client-id: back
+    credentials:
+      secret: On2O5MTl0G3K4Y3DvCfvOLfj19z8S2xf
+    tls:
+      verification: none
