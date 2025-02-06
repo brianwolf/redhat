@@ -15,7 +15,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
         clientId: environment.keycloak.clientId,
       },
       initOptions: {
-        onLoad: 'check-sso'
+        onLoad: 'check-sso',
+        redirectUri: environment.keycloak.redirectUri
       },
       enableBearerInterceptor: true
     });

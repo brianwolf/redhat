@@ -1,0 +1,9 @@
+# -------------------------------
+# FINAL IMAGE
+# -------------------------------
+
+FROM docker.io/library/ubuntu:25.04
+
+COPY target/quarkus-1.0.0-SNAPSHOT-runner /usr/local/bin/app
+
+CMD ["/usr/local/bin/app"]

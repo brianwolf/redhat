@@ -1,10 +1,19 @@
-version: "3.8"
+networks:
+  docker-net:
+    name: docker-net
+    external: true
+
+volumes:
+  keycloak:
+    name: keycloak
+    external: false
 
 services:
 
   keycloak:
     image: quay.io/keycloak/keycloak:26.1.0
     container_name: keycloak
+    hostname: keycloak
     restart: on-failure:3
     environment:
       - KC_BOOTSTRAP_ADMIN_USERNAME=admin
@@ -16,13 +25,3 @@ services:
     volumes:
       - keycloak:/opt/keycloak/data/:rw
     command: start-dev
-
-networks:
-  docker-net:
-    name: docker-net
-    external: false
-
-volumes:
-  keycloak:
-    name: keycloak
-    external: false

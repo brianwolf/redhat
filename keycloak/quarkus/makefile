@@ -9,3 +9,7 @@ c compile:
 
 l linux:
 	./target/$(APP_NAME)-$(VERSION)-runner
+
+
+db docker-build:
+	docker build . -t caja-ande/$(APP_NAME):$(VERSION)
