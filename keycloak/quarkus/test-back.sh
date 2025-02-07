@@ -5,7 +5,7 @@
 BACKEND_URL=http://localhost:8080
 KEYCLOAK_URL=http://localhost:9090
 CLIENT_ID=back
-CLIENT_SECRET=QBCh7bLJmGe8N8UJJQc6x1tifKkqDK5W
+CLIENT_SECRET=bOiBIwUNVJreDMuOIlbE54Z47YGjIxVh
 
 
 # ------------------------------------------

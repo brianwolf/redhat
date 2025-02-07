@@ -13,3 +13,8 @@ l linux:
 
 db docker-build:
 	docker build . -t caja-ande/$(APP_NAME):$(VERSION)
+	# docker build . -t caja-ande/$(APP_NAME):$(VERSION) -f src/main/docker/Dockerfile.jvm
+
+
+caja-ande:
+	docker build . -t docker.io/brianwolf94/cajaande-back:1.0.0 && docker push docker.io/brianwolf94/cajaande-back:1.0.0

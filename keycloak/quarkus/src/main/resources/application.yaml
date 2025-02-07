@@ -2,11 +2,6 @@ quarkus:
   http:
     port: 8080
 
-mp:
-  jwt:
-    verify:
-      issuer: http://keycloak:8080/realms/caja-ande
-
 quarkus:
   keycloak:
     policy-enforcer:
@@ -20,6 +15,6 @@ quarkus:
       issuer: ${KEYCLOAK_TOKEN_ISSUER:any}
     client-id: ${KEYCLOAK_CLIENT_ID:back}
     credentials:
-      secret: ${KEYCLOAK_CLIENT_SECRET:On2O5MTl0G3K4Y3DvCfvOLfj19z8S2xf}
+      secret: ${KEYCLOAK_CLIENT_SECRET:xxx}
     tls:
       verification: none

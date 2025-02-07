@@ -15,7 +15,7 @@ services:
       KEYCLOAK_URL: http://keycloak:8080/realms/caja-ande
       KEYCLOAK_TOKEN_ISSUER: http://localhost:9090/realms/caja-ande
       KEYCLOAK_CLIENT_ID: back
-      KEYCLOAK_CLIENT_SECRET: QBCh7bLJmGe8N8UJJQc6x1tifKkqDK5W
+      KEYCLOAK_CLIENT_SECRET: bOiBIwUNVJreDMuOIlbE54Z47YGjIxVh
     ports:
       - 8080:8080
     networks:
